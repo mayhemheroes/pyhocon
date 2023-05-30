@@ -6,8 +6,10 @@ from pyparsing import ParseSyntaxException, ParseException
 
 import fuzz_helpers
 
-with atheris.instrument_imports():
-    from pyhocon import ConfigFactory, ConfigWrongTypeException, ConfigSubstitutionException
+with atheris.instrument_imports(include=['pyhocon']):
+    from pyhocon import ConfigFactory
+
+from pyhocon import ConfigWrongTypeException, ConfigSubstitutionException
 
 def TestOneInput(data):
     fdp = fuzz_helpers.EnhancedFuzzedDataProvider(data)
