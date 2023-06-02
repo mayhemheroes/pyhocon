@@ -1,0 +1,8 @@
+project: pyhocon
+target: fuzz-conf
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /src/mayhem/fuzz_conf.py
+    libfuzzer: true
